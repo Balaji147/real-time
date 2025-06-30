@@ -315,13 +315,13 @@
       {
         "totalInvestment": 255709,
         "portfolioPercent": 0.1657155262919135,
-        "presentValue": 198514.7203,
-        "gainLoss": -57194.2797,
+        "presentValue": 198501.9203,
+        "gainLoss": -57207.0797,
         "purchasePrice": 11376,
         "quantity": 132,
         "investment": 255709,
         "nseBse": 2665277,
-        "cmp": 10320.3147
+        "cmp": 10319.9147
       },
       {
         "particulars": "Clean Science",
@@ -330,11 +330,11 @@
         "investment": 51520,
         "portfolioPercent": 0.03338820266224256,
         "nseBse": 543318,
-        "presentValue": 46912,
-        "gainLoss": -4608,
+        "presentValue": 46899.2,
+        "gainLoss": -4620.800000000003,
         "peRatio": "58.88",
         "latestEarnings": "₹1,465.00",
-        "cmp": 1466
+        "cmp": 1465.6
       },
       {
         "particulars": "Deepak Nitrite",
