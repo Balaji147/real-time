@@ -14,11 +14,9 @@ app.use(express.json())
 // Update data every 15 seconds automatically
 setInterval(async () => {
   await updatePortfolioData()
-  console.log("Portfolio data refreshed")
 }, 15000)
 
 app.get("/dashboard", async (req, res) => {
-  console.log(JSON.stringify(portfolio, null, 2));
   res.status(200).json({ "message": "Data fetched", portfolio: portfolio})
 })
 

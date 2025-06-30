@@ -12,7 +12,6 @@ async function fetchCMPFromYahoo(companyName) {
     if (!quoteMeta) return null;
 
     const quote = await yahooFinance.quote(quoteMeta.symbol);
-    //console.log(quote.regularMarketPrice)
     return {
       cmp: quote.regularMarketPrice,
       exchange: quoteMeta.exchange,
@@ -37,37 +36,35 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
 
     const getMetric = (label) => {
       let value = '-';
-      $('div').each((_, div) => {
-        const divEl = $(div);
-        const span = divEl.find('span').first();
-        if (!span.length) return;
-
-        const labelDiv = span.find('div').first();
-        if (labelDiv.text().trim() === label) {
-          const directDivs = divEl.children('div').not(span);
-          const valueDiv = directDivs.last();
-          if (valueDiv.length) {
-            value = valueDiv.text().trim();
-          }
+      $(`div:contains(${label})`).each((_, el) => {
+        const container = $(el).closest('div.gyFHrc');
+        if (container.length) {
+          const val = container.find('div.P6K39c').text().trim();
+          if (val) value = val;
         }
       });
       return value;
     };
 
+    // New: Get latest earnings from div with YMlKec fxKbKc class
+    const latestEarningsRaw = $('div.YMlKec.fxKbKc').first().text().trim();
+    const latestEarnings = latestEarningsRaw || '-';
     const peRatio = getMetric('P/E ratio');
-    const earnings = getMetric('Earnings per share');
-    return { peRatio, earnings };
+
+    return { peRatio, latestEarnings };
   } catch (err) {
     console.warn(`⚠️ Google fetch failed for ${baseSymbol}:${suffix}: ${err.message}`);
-    return { peRatio: '-', earnings: '-' };
+    return { peRatio: '-', earnings: '-', latestEarnings: '-' };
   }
 }
 
+
+//fetchGoogleFundamentals("hdfcbank","nse")
 export const updatePortfolioData = async () => {
   for (const [sector, items] of Object.entries(portfolioData.portfolio)) {
     if (items.length > 1) {
       const totals = {};
-
+      
       // Initialize totals object with numeric keys
       Object.keys(items[1]).forEach(key => {
         if (typeof items[1][key] === 'number') {
@@ -102,13 +99,13 @@ export const updatePortfolioData = async () => {
         // Fetch Yahoo data
         try {
           const yahooData = await fetchCMPFromYahoo(item.particulars);
-          
           item.cmp = yahooData?.cmp
           if (yahooData?.exchange) {
             // Fetch Google data using name and exchange
-            const googleData = await fetchGoogleFundamentals(item.nscBse, yahooData.exchange);
+            const googleData = await fetchGoogleFundamentals(item.nseBse, yahooData.exchange);
             // Update item with fetched values
             item.peRatio = googleData?.peRatio || item.peRatio;
+
             item.latestEarnings = googleData?.latestEarnings || item.latestEarnings;
           }
         } catch (err) {
@@ -124,4 +121,4 @@ export const updatePortfolioData = async () => {
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
 };
 
-
+updatePortfolioData()
