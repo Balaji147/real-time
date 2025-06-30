@@ -293,9 +293,9 @@
         "nseBse": "ASTRAL",
         "presentValue": 84380.8,
         "gainLoss": -571.1999999999971,
-        "peRatio": "-",
-        "latestEarnings": "-",
-        "cmp": 1506.5
+        "peRatio": "77.28",
+        "latestEarnings": "₹1,506.90",
+        "cmp": 1506.8
       },
       {
         "particulars": "Polycab",
@@ -315,13 +315,13 @@
       {
         "totalInvestment": 255709,
         "portfolioPercent": 0.1657155262919135,
-        "presentValue": 198514.7203,
-        "gainLoss": -57194.2797,
+        "presentValue": 198650.7203,
+        "gainLoss": -57058.2797,
         "purchasePrice": 11376,
         "quantity": 132,
         "investment": 255709,
         "nseBse": 2665277,
-        "cmp": 10320.3147
+        "cmp": 10319.9147
       },
       {
         "particulars": "Clean Science",
@@ -356,8 +356,8 @@
         "investment": 68544,
         "portfolioPercent": 0.04442082615063575,
         "nseBse": 541557,
-        "presentValue": 78289.6,
-        "gainLoss": 9745.600000000006,
+        "presentValue": 78425.6,
+        "gainLoss": 9881.600000000006,
         "peRatio": "36.74",
         "latestEarnings": "₹4,918.45",
         "cmp": 4893.1

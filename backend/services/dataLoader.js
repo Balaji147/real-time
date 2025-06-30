@@ -58,67 +58,62 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
   }
 }
 
-
 //fetchGoogleFundamentals("hdfcbank","nse")
 export const updatePortfolioData = async () => {
   for (const [sector, items] of Object.entries(portfolioData.portfolio)) {
     if (items.length > 1) {
       const totals = {};
-      
-      // Initialize totals object with numeric keys
       Object.keys(items[1]).forEach(key => {
         if (typeof items[1][key] === 'number') {
           totals[key] = 0;
         }
       });
 
-      // Calculate totals, investment, presentValue, gainLoss
-      for (const item of items.slice(1)) {
-        // Calculate investment = price * qty
+      // Prepare promises for all items in sector
+      const itemPromises = items.slice(1).map(async (item) => {
+        // Calculations (investment, presentValue, gainLoss)
         if (item.purchasePrice && item.quantity) {
           item.investment = item.purchasePrice * item.quantity;
         }
-
-        // Calculate presentValue = cmp * qty
         if (item.cmp && item.quantity) {
           item.presentValue = item.cmp * item.quantity;
         }
-
-        // Calculate gainLoss = presentValue - investment
         if (item.presentValue != null && item.investment != null) {
           item.gainLoss = item.presentValue - item.investment;
         }
 
-        // Sum numeric fields
-        Object.entries(item).forEach(([key, value]) => {
-          if (typeof value === 'number') {
-            totals[key] += value;
-          }
-        });
-
         // Fetch Yahoo data
         try {
           const yahooData = await fetchCMPFromYahoo(item.particulars);
-          item.cmp = yahooData?.cmp
+          item.cmp = yahooData?.cmp;
           if (yahooData?.exchange) {
-            // Fetch Google data using name and exchange
+            // Fetch Google data in parallel as well
             const googleData = await fetchGoogleFundamentals(item.nseBse, yahooData.exchange);
-            // Update item with fetched values
             item.peRatio = googleData?.peRatio || item.peRatio;
-
             item.latestEarnings = googleData?.latestEarnings || item.latestEarnings;
           }
         } catch (err) {
           console.error(`Failed to fetch data for ${item.particulars}:`, err);
         }
-      }
 
-      // Assign totals to the first entry
+        return item;
+      });
+
+      // Await all items in parallel
+      const updatedItems = await Promise.all(itemPromises);
+
+      // Sum numeric fields after all updates
+      updatedItems.forEach(item => {
+        Object.entries(item).forEach(([key, value]) => {
+          if (typeof value === 'number') {
+            totals[key] += value;
+          }
+        });
+      });
+
       Object.assign(items[0], totals);
     }
   }
 
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
 };
-
-updatePortfolioData()
