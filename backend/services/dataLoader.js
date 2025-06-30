@@ -12,6 +12,7 @@ async function fetchCMPFromYahoo(companyName) {
     if (!quoteMeta) return null;
 
     const quote = await yahooFinance.quote(quoteMeta.symbol);
+    console.log(quote.regularMarketPrice)
     return {
       cmp: quote.regularMarketPrice,
       exchange: quoteMeta.exchange,
@@ -34,30 +35,27 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
 
     const $ = cheerio.load(data);
 
-const getMetric = (label) => {
-  let value = '-';
+    const getMetric = (label) => {
+      let value = '-';
+      $('div').each((_, div) => {
+        const divEl = $(div);
+        const span = divEl.find('span').first();
+        if (!span.length) return;
 
-document.querySelectorAll('div').forEach(div => {
-  // Check if this div contains a span with a div whose text is 'P/E ratio'
-  const span = div.querySelector('span');
-  if (!span) return;
+        const labelDiv = span.find('div').first();
+        if (labelDiv.text().trim() === label) {
+          const directDivs = divEl.children('div').not(span);
+          const valueDiv = directDivs.last();
+          if (valueDiv.length) {
+            value = valueDiv.text().trim();
+          }
+        }
+      });
+      return value;
+    };
 
-  const labelDiv = span.querySelector('div');
-  console.log(labelDiv)
-  if (labelDiv && labelDiv.textContent.trim() === 'P/E ratio') {
-    // Now get the value div (any direct div child of container not inside span)
-    const directDivs = Array.from(div.children).filter(child => child.tagName === 'DIV' && !child.closest('span'));
-    // The value div is the last div child of the container excluding the span
-    const valueDiv = directDivs[directDivs.length - 1];
-    if (valueDiv) value = valueDiv.textContent.trim();
-  }
-});
-    console.log("value",value)
-  return value;
-};
     const peRatio = getMetric('P/E ratio');
     const earnings = getMetric('Earnings per share');
-    console.log(peRatio)
     return { peRatio, earnings };
   } catch (err) {
     console.warn(`⚠️ Google fetch failed for ${baseSymbol}:${suffix}: ${err.message}`);
@@ -65,25 +63,33 @@ document.querySelectorAll('div').forEach(div => {
   }
 }
 
-export async function updatePortfolioData() {
-  for (const sector in portfolioData) {
-    for (const stock of portfolioData[sector]) {
-      const cmpData = await fetchCMPFromYahoo(stock.particulars);
-      if (!cmpData) continue;
+export const updatePortfolioData = async () => {
+  Object.entries(portfolioData.portfolio).forEach(([sector, items]) => {
+    if (items.length > 1) {
+      const totals = {};
 
-      const baseSymbol = cmpData.symbol.replace('.NS', '').replace('.BO', '');
-      const { peRatio, earnings } = await fetchGoogleFundamentals(baseSymbol, cmpData.exchange);
+      // Initialize totals object with numeric keys
+      Object.keys(items[1]).forEach(key => {
+        if (typeof items[1][key] === 'number') {
+          totals[key] = 0;
+        }
+      });
 
-      stock.cmp = cmpData.cmp;
-      stock.peRatio = peRatio;
-      stock.latestEarnings = earnings;
-      stock.presentValue = cmpData.cmp * stock.quantity;
-      stock.gainLoss = stock.presentValue - stock.investment;
+      // Sum up numeric fields
+      items.slice(1).forEach(item => {
+        Object.entries(item).forEach(([key, value]) => {
+          if (typeof value === 'number') {
+            totals[key] += value;
+          }
+        });
+      });
+
+      // Assign totals to the first entry
+      Object.assign(items[0], totals);
     }
-  }
+  }); 
+
+  
 
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
-  console.log('✅ Portfolio updated successfully');
-}
-
-export const getPortfolioData = () => portfolioData;
+};

@@ -1,7 +1,10 @@
 import express from "express"
 const app = express()
 import dotenv from "dotenv"
-import { updatePortfolioData, getPortfolioData } from "./services/dataLoader.js"
+import { updatePortfolioData } from "./services/dataLoader.js"
+import fs from 'fs';
+const portfolio = JSON.parse(fs.readFileSync('./portfolio_data.json', 'utf-8'));
+
 dotenv.config()
 import cors from 'cors'
 
@@ -15,7 +18,7 @@ setInterval(async () => {
 }, 15000)
 
 app.get("/dashboard", async (req, res) => {
-  res.status(200).json({ "message": "Data fetched", portfolio: getPortfolioData() })
+  res.status(200).json({ "message": "Data fetched", portfolio: portfolio})
 })
 
 const port = process.env.PORT
