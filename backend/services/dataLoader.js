@@ -116,4 +116,4 @@ export const updatePortfolioData = async () => {
   }
 
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
-};
+}
