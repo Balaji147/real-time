@@ -18,6 +18,7 @@ setInterval(async () => {
 }, 15000)
 
 app.get("/dashboard", async (req, res) => {
+  console.log(JSON.stringify(portfolio, null, 2));
   res.status(200).json({ "message": "Data fetched", portfolio: portfolio})
 })
 

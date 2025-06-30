@@ -12,7 +12,7 @@ async function fetchCMPFromYahoo(companyName) {
     if (!quoteMeta) return null;
 
     const quote = await yahooFinance.quote(quoteMeta.symbol);
-    console.log(quote.regularMarketPrice)
+    //console.log(quote.regularMarketPrice)
     return {
       cmp: quote.regularMarketPrice,
       exchange: quoteMeta.exchange,
@@ -64,7 +64,7 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
 }
 
 export const updatePortfolioData = async () => {
-  Object.entries(portfolioData.portfolio).forEach(([sector, items]) => {
+  for (const [sector, items] of Object.entries(portfolioData.portfolio)) {
     if (items.length > 1) {
       const totals = {};
 
@@ -75,21 +75,53 @@ export const updatePortfolioData = async () => {
         }
       });
 
-      // Sum up numeric fields
-      items.slice(1).forEach(item => {
+      // Calculate totals, investment, presentValue, gainLoss
+      for (const item of items.slice(1)) {
+        // Calculate investment = price * qty
+        if (item.purchasePrice && item.quantity) {
+          item.investment = item.purchasePrice * item.quantity;
+        }
+
+        // Calculate presentValue = cmp * qty
+        if (item.cmp && item.quantity) {
+          item.presentValue = item.cmp * item.quantity;
+        }
+
+        // Calculate gainLoss = presentValue - investment
+        if (item.presentValue != null && item.investment != null) {
+          item.gainLoss = item.presentValue - item.investment;
+        }
+
+        // Sum numeric fields
         Object.entries(item).forEach(([key, value]) => {
           if (typeof value === 'number') {
             totals[key] += value;
           }
         });
-      });
+
+        // Fetch Yahoo data
+        try {
+          const yahooData = await fetchCMPFromYahoo(item.particulars);
+          
+          item.cmp = yahooData?.cmp
+          if (yahooData?.exchange) {
+            // Fetch Google data using name and exchange
+            const googleData = await fetchGoogleFundamentals(item.nscBse, yahooData.exchange);
+            // Update item with fetched values
+            item.peRatio = googleData?.peRatio || item.peRatio;
+            item.latestEarnings = googleData?.latestEarnings || item.latestEarnings;
+          }
+        } catch (err) {
+          console.error(`Failed to fetch data for ${item.particulars}:`, err);
+        }
+      }
 
       // Assign totals to the first entry
       Object.assign(items[0], totals);
     }
-  }); 
-
-  
+  }
 
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
 };
+
+
