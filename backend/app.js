@@ -16,7 +16,7 @@ setInterval(async () => {
   await updatePortfolioData()
 }, 15000)
 
-app.get("/dashboard", async (req, res) => {
+app.get("/", async (req, res) => {
   res.status(200).json({ "message": "Data fetched", portfolio: portfolio})
 })
 

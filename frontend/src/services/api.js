@@ -7,7 +7,7 @@ const API = axios.create({
 
 export const fetchPortfolioData = async () => {
   try {
-    const res = await API.get('/dashboard');
+    const res = await API.get('/');
     return res.data.portfolio;
   } catch (err) {
     console.error('Error fetching portfolio:', err);

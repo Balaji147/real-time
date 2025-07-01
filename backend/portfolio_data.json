@@ -264,8 +264,8 @@
       {
         "totalInvestment": 198656,
         "portfolioPercent": 0.12618900107578448,
-        "presentValue": 663218.4,
-        "gainLoss": 464562.4,
+        "presentValue": 663240.8,
+        "gainLoss": 464584.8,
         "purchasePrice": 4915,
         "quantity": 144,
         "investment": 198656,
@@ -291,11 +291,11 @@
         "investment": 84952,
         "portfolioPercent": 0.05505424286806734,
         "nseBse": "ASTRAL",
-        "presentValue": 83686.40000000001,
-        "gainLoss": -1265.5999999999913,
-        "peRatio": "-",
-        "latestEarnings": "-",
-        "cmp": 1494.8
+        "presentValue": 83708.8,
+        "gainLoss": -1243.199999999997,
+        "peRatio": "76.66",
+        "latestEarnings": "₹1,494.80",
+        "cmp": 1494.4
       },
       {
         "particulars": "Polycab",
@@ -315,13 +315,13 @@
       {
         "totalInvestment": 255709,
         "portfolioPercent": 0.1657155262919135,
-        "presentValue": 200037.1703,
-        "gainLoss": -55671.829699999995,
+        "presentValue": 199924.37029999998,
+        "gainLoss": -55784.6297,
         "purchasePrice": 11376,
         "quantity": 132,
         "investment": 255709,
         "nseBse": 2665277,
-        "cmp": 10427.2647
+        "cmp": 10426.064699999999
       },
       {
         "particulars": "Clean Science",
@@ -334,7 +334,7 @@
         "gainLoss": -5161.5999999999985,
         "peRatio": "58.24",
         "latestEarnings": "₹1,449.00",
-        "cmp": 1449.9
+        "cmp": 1448.7
       },
       {
         "particulars": "Deepak Nitrite",
@@ -356,8 +356,8 @@
         "investment": 68544,
         "portfolioPercent": 0.04442082615063575,
         "nseBse": 541557,
-        "presentValue": 81296.8,
-        "gainLoss": 12752.800000000003,
+        "presentValue": 81184,
+        "gainLoss": 12640,
         "peRatio": "37.93",
         "latestEarnings": "₹5,078.50",
         "cmp": 5074
