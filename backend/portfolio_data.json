@@ -4,12 +4,12 @@
       {
         "totalInvestment": 328450,
         "portfolioPercent": 0.21285627260119502,
-        "presentValue": 315342.1,
-        "gainLoss": -13107.900000000009,
+        "presentValue": 315057.15,
+        "gainLoss": -13392.849999999999,
         "purchasePrice": 8890,
         "quantity": 1733,
         "investment": 328450,
-        "cmp": 4522.650000000001,
+        "cmp": 4519.73,
         "nseBse": null
       },
       {
@@ -19,11 +19,11 @@
         "investment": 74500,
         "portfolioPercent": 0.04828068902051767,
         "nseBse": "HDFCBANK",
-        "presentValue": 100075,
-        "gainLoss": 25575,
-        "peRatio": "21.65",
-        "latestEarnings": "₹2,000.00",
-        "cmp": 2001.5
+        "presentValue": 100605,
+        "gainLoss": 26105,
+        "peRatio": "21.77",
+        "latestEarnings": "₹2,011.10",
+        "cmp": 2012.1
       },
       {
         "particulars": "Bajaj Finance",
@@ -32,11 +32,11 @@
         "investment": 96990,
         "portfolioPercent": 0.06285562453825516,
         "nseBse": "BAJFINANCE",
-        "presentValue": 14047.5,
-        "gainLoss": -82942.5,
-        "peRatio": "34.94",
-        "latestEarnings": "₹937.00",
-        "cmp": 936.5
+        "presentValue": 14049.75,
+        "gainLoss": -82940.25,
+        "peRatio": "34.97",
+        "latestEarnings": "₹937.90",
+        "cmp": 936.65
       },
       {
         "particulars": "ICICI Bank",
@@ -45,11 +45,11 @@
         "investment": 65520,
         "portfolioPercent": 0.04246108382046064,
         "nseBse": 532174,
-        "presentValue": 121447.2,
-        "gainLoss": 55927.2,
-        "peRatio": "20.32",
-        "latestEarnings": "₹1,445.80",
-        "cmp": 1445.8
+        "presentValue": 120288,
+        "gainLoss": 54768,
+        "peRatio": "20.13",
+        "latestEarnings": "₹1,432.00",
+        "cmp": 1432
       },
       {
         "particulars": "Bajaj Housing",
@@ -58,11 +58,11 @@
         "investment": 65520,
         "portfolioPercent": 0.04246108382046064,
         "nseBse": 544252,
-        "presentValue": 61412.399999999994,
-        "gainLoss": -4107.600000000006,
-        "peRatio": "45.64",
-        "latestEarnings": "₹121.85",
-        "cmp": 121.85
+        "presentValue": 61236,
+        "gainLoss": -4284,
+        "peRatio": "45.51",
+        "latestEarnings": "₹121.50",
+        "cmp": 121.5
       },
       {
         "particulars": "Savani Financials",
@@ -71,24 +71,24 @@
         "investment": 25920,
         "portfolioPercent": 0.016797791401500915,
         "nseBse": 511577,
-        "presentValue": 18360,
-        "gainLoss": -7560,
+        "presentValue": 18878.4,
+        "gainLoss": -7041.5999999999985,
         "peRatio": "-",
-        "latestEarnings": "₹17.00",
-        "cmp": 17
+        "latestEarnings": "₹17.48",
+        "cmp": 17.48
       }
     ],
     "Tech Sector": [
       {
         "totalInvestment": 203870,
         "portfolioPercent": 0.13212059155185152,
-        "presentValue": 189409.85,
-        "gainLoss": -14460.150000000001,
+        "presentValue": 187844.3,
+        "gainLoss": -16025.7,
         "purchasePrice": 3110,
         "quantity": 360,
         "investment": 203870,
         "nseBse": 2163576,
-        "cmp": 2817.25
+        "cmp": 2803.3
       },
       {
         "particulars": "KPIT Tech",
@@ -97,11 +97,11 @@
         "investment": 40992,
         "portfolioPercent": 0.026565396031262557,
         "nseBse": 542651,
-        "presentValue": 76780.7,
-        "gainLoss": 35788.7,
-        "peRatio": "41.00",
-        "latestEarnings": "₹1,258.85",
-        "cmp": 1258.7
+        "presentValue": 76085.3,
+        "gainLoss": 35093.3,
+        "peRatio": "40.61",
+        "latestEarnings": "₹1,246.85",
+        "cmp": 1247.3
       },
       {
         "particulars": "Tata Tech",
@@ -110,11 +110,11 @@
         "investment": 67536,
         "portfolioPercent": 0.04376757870724405,
         "nseBse": 544028,
-        "presentValue": 44793,
-        "gainLoss": -22743,
-        "peRatio": "42.67",
-        "latestEarnings": "₹711.00",
-        "cmp": 711
+        "presentValue": 44755.2,
+        "gainLoss": -22780.800000000003,
+        "peRatio": "42.64",
+        "latestEarnings": "₹710.40",
+        "cmp": 710.4
       },
       {
         "particulars": "BLS E-Services",
@@ -123,11 +123,11 @@
         "investment": 44312,
         "portfolioPercent": 0.028716964991639986,
         "nseBse": 544107,
-        "presentValue": 38849.4,
-        "gainLoss": -5462.5999999999985,
-        "peRatio": "35.12",
-        "latestEarnings": "₹203.35",
-        "cmp": 203.4
+        "presentValue": 37875.3,
+        "gainLoss": -6436.699999999997,
+        "peRatio": "34.37",
+        "latestEarnings": "₹199.00",
+        "cmp": 198.3
       },
       {
         "particulars": "Tanla",
@@ -136,23 +136,23 @@
         "investment": 51030,
         "portfolioPercent": 0.033070651821704926,
         "nseBse": 532790,
-        "presentValue": 28986.75,
-        "gainLoss": -22043.25,
-        "peRatio": "17.10",
-        "latestEarnings": "₹644.15",
-        "cmp": 644.15
+        "presentValue": 29128.499999999996,
+        "gainLoss": -21901.500000000004,
+        "peRatio": "17.18",
+        "latestEarnings": "₹647.30",
+        "cmp": 647.3
       }
     ],
     "Consumer": [
       {
         "totalInvestment": 263565,
         "portfolioPercent": 0.17080670874755355,
-        "presentValue": 326950.64999999997,
-        "gainLoss": 63385.64999999998,
+        "presentValue": 328411.80000000005,
+        "gainLoss": 64846.80000000002,
         "purchasePrice": 6998,
         "quantity": 153,
         "investment": 263565,
-        "cmp": 8526.199999999999,
+        "cmp": 8592.5,
         "nseBse": null
       },
       {
@@ -162,11 +162,11 @@
         "investment": 101979,
         "portfolioPercent": 0.06608881054528015,
         "nseBse": "DMART",
-        "presentValue": 118048.04999999999,
-        "gainLoss": 16069.049999999988,
+        "presentValue": 120209.4,
+        "gainLoss": 18230.399999999994,
         "peRatio": "-",
         "latestEarnings": "-",
-        "cmp": 4372.15
+        "cmp": 4452.2
       },
       {
         "particulars": "Tata Consumer",
@@ -175,11 +175,11 @@
         "investment": 76050,
         "portfolioPercent": 0.04928518657732039,
         "nseBse": 532540,
-        "presentValue": 98928,
-        "gainLoss": 22878,
-        "peRatio": "25.79",
-        "latestEarnings": "₹3,461.05",
-        "cmp": 1099.2
+        "presentValue": 98586.00000000001,
+        "gainLoss": 22536.000000000015,
+        "peRatio": "25.56",
+        "latestEarnings": "₹3,429.45",
+        "cmp": 1095.4
       },
       {
         "particulars": "Pidilite",
@@ -188,24 +188,24 @@
         "investment": 85536,
         "portfolioPercent": 0.055432711624953016,
         "nseBse": 500331,
-        "presentValue": 109974.59999999999,
-        "gainLoss": 24438.59999999999,
-        "peRatio": "74.76",
-        "latestEarnings": "₹3,045.00",
-        "cmp": 3054.85
+        "presentValue": 109616.40000000001,
+        "gainLoss": 24080.40000000001,
+        "peRatio": "74.82",
+        "latestEarnings": "₹3,047.45",
+        "cmp": 3044.9
       }
     ],
     "Power": [
       {
         "totalInvestment": 158860,
         "portfolioPercent": 0.10295127862818038,
-        "presentValue": 149347.15,
-        "gainLoss": -9512.849999999999,
+        "presentValue": 150145.6,
+        "gainLoss": -8714.400000000001,
         "purchasePrice": 2141,
         "quantity": 770,
         "investment": 158860,
         "nseBse": 2118241,
-        "cmp": 1030.34
+        "cmp": 1046.8300000000002
       },
       {
         "particulars": "Tata Power",
@@ -214,11 +214,11 @@
         "investment": 50400,
         "portfolioPercent": 0.03266237216958511,
         "nseBse": 500400,
-        "presentValue": 91226.25,
-        "gainLoss": 40826.25,
-        "peRatio": "32.68",
-        "latestEarnings": "₹405.60",
-        "cmp": 405.45
+        "presentValue": 91473.75,
+        "gainLoss": 41073.75,
+        "peRatio": "32.75",
+        "latestEarnings": "₹406.45",
+        "cmp": 406.55
       },
       {
         "particulars": "KPI Green",
@@ -227,11 +227,11 @@
         "investment": 43750,
         "portfolioPercent": 0.028352753619431518,
         "nseBse": 542323,
-        "presentValue": 25742.5,
-        "gainLoss": -18007.5,
-        "peRatio": "31.82",
-        "latestEarnings": "₹512.00",
-        "cmp": 514.85
+        "presentValue": 26432.5,
+        "gainLoss": -17317.5,
+        "peRatio": "32.86",
+        "latestEarnings": "₹528.65",
+        "cmp": 528.65
       },
       {
         "particulars": "Suzlon",
@@ -240,11 +240,11 @@
         "investment": 19800,
         "portfolioPercent": 0.012831646209479864,
         "nseBse": 532667,
-        "presentValue": 30474,
-        "gainLoss": 10674,
-        "peRatio": "44.89",
-        "latestEarnings": "₹67.78",
-        "cmp": 67.72
+        "presentValue": 30240,
+        "gainLoss": 10440,
+        "peRatio": "44.50",
+        "latestEarnings": "₹67.19",
+        "cmp": 67.2
       },
       {
         "particulars": "Gensol",
@@ -253,19 +253,19 @@
         "investment": 44910,
         "portfolioPercent": 0.029104506629683873,
         "nseBse": 542851,
-        "presentValue": 1904.4,
-        "gainLoss": -43005.6,
-        "peRatio": "1.58",
-        "latestEarnings": "₹42.46",
-        "cmp": 42.32
+        "presentValue": 1999.35,
+        "gainLoss": -42910.65,
+        "peRatio": "1.66",
+        "latestEarnings": "₹44.58",
+        "cmp": 44.43
       }
     ],
     "Pipe Sector": [
       {
         "totalInvestment": 198656,
         "portfolioPercent": 0.12618900107578448,
-        "presentValue": 660748.8,
-        "gainLoss": 462092.8,
+        "presentValue": 663218.4,
+        "gainLoss": 464562.4,
         "purchasePrice": 4915,
         "quantity": 144,
         "investment": 198656,
@@ -291,11 +291,11 @@
         "investment": 84952,
         "portfolioPercent": 0.05505424286806734,
         "nseBse": "ASTRAL",
-        "presentValue": 84380.8,
-        "gainLoss": -571.1999999999971,
-        "peRatio": "77.28",
-        "latestEarnings": "₹1,506.90",
-        "cmp": 1506.8
+        "presentValue": 83686.40000000001,
+        "gainLoss": -1265.5999999999913,
+        "peRatio": "-",
+        "latestEarnings": "-",
+        "cmp": 1494.8
       },
       {
         "particulars": "Polycab",
@@ -304,24 +304,24 @@
         "investment": 78904,
         "portfolioPercent": 0.05113475820771713,
         "nseBse": 542652,
-        "presentValue": 183428,
-        "gainLoss": 104524,
-        "peRatio": "48.90",
-        "latestEarnings": "₹6,542.30",
-        "cmp": 6551
+        "presentValue": 186592,
+        "gainLoss": 107688,
+        "peRatio": "49.78",
+        "latestEarnings": "₹6,660.00",
+        "cmp": 6664
       }
     ],
     "Others": [
       {
         "totalInvestment": 255709,
         "portfolioPercent": 0.1657155262919135,
-        "presentValue": 198501.9203,
-        "gainLoss": -57207.0797,
+        "presentValue": 200037.1703,
+        "gainLoss": -55671.829699999995,
         "purchasePrice": 11376,
         "quantity": 132,
         "investment": 255709,
         "nseBse": 2665277,
-        "cmp": 10319.9147
+        "cmp": 10427.2647
       },
       {
         "particulars": "Clean Science",
@@ -330,11 +330,11 @@
         "investment": 51520,
         "portfolioPercent": 0.03338820266224256,
         "nseBse": 543318,
-        "presentValue": 46899.2,
-        "gainLoss": -4620.800000000003,
-        "peRatio": "58.88",
-        "latestEarnings": "₹1,465.00",
-        "cmp": 1465.6
+        "presentValue": 46358.4,
+        "gainLoss": -5161.5999999999985,
+        "peRatio": "58.24",
+        "latestEarnings": "₹1,449.00",
+        "cmp": 1449.9
       },
       {
         "particulars": "Deepak Nitrite",
@@ -343,11 +343,11 @@
         "investment": 60696,
         "portfolioPercent": 0.03933482819851464,
         "nseBse": 506401,
-        "presentValue": 53604.45,
-        "gainLoss": -7091.550000000003,
+        "presentValue": 52938.9,
+        "gainLoss": -7757.0999999999985,
         "peRatio": "-",
-        "latestEarnings": "₹1,985.35",
-        "cmp": 1985.35
+        "latestEarnings": "₹1,960.00",
+        "cmp": 1960.7
       },
       {
         "particulars": "Fine Organic",
@@ -356,11 +356,11 @@
         "investment": 68544,
         "portfolioPercent": 0.04442082615063575,
         "nseBse": 541557,
-        "presentValue": 78289.6,
-        "gainLoss": 9745.600000000006,
-        "peRatio": "36.74",
-        "latestEarnings": "₹4,918.45",
-        "cmp": 4893.1
+        "presentValue": 81296.8,
+        "gainLoss": 12752.800000000003,
+        "peRatio": "37.93",
+        "latestEarnings": "₹5,078.50",
+        "cmp": 5074
       },
       {
         "particulars": "Gravita",
@@ -369,11 +369,11 @@
         "investment": 16296,
         "portfolioPercent": 0.010560833668165853,
         "nseBse": 533282,
-        "presentValue": 15045.6,
-        "gainLoss": -1250.3999999999996,
-        "peRatio": "41.70",
-        "latestEarnings": "₹1,880.90",
-        "cmp": 1880.7
+        "presentValue": 14780,
+        "gainLoss": -1516,
+        "peRatio": "40.93",
+        "latestEarnings": "₹1,846.45",
+        "cmp": 1847.5
       },
       {
         "particulars": "SBI Life",
@@ -384,8 +384,8 @@
         "nseBse": 540719,
         "presentValue": 4663.070299999999,
         "gainLoss": -53989.9297,
-        "peRatio": "76.22",
-        "latestEarnings": "₹1,834.70",
+        "peRatio": "77.48",
+        "latestEarnings": "₹1,864.90",
         "cmp": 95.1647
       }
     ]
