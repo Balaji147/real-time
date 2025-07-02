@@ -11,6 +11,11 @@ import cors from 'cors'
 app.use(cors())
 app.use(express.json())
 
+//make keep alive in host
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
 // Update data every 15 seconds automatically
 setInterval(async () => {
   await updatePortfolioData()

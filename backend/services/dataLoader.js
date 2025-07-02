@@ -12,6 +12,7 @@ async function fetchCMPFromYahoo(companyName) {
     if (!quoteMeta) return null;
 
     const quote = await yahooFinance.quote(quoteMeta.symbol);
+    console.log(quote.regularMarketPrice, quote.symbol)
     return {
       cmp: quote.regularMarketPrice,
       exchange: quoteMeta.exchange,
@@ -29,7 +30,9 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
 
   try {
     const { data } = await axios.get(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0' }
+      headers: { 'User-Agent': 'Mozilla/5.0' },
+      timeout: 10000,
+      validateStatus: () => true,
     });
 
     const $ = cheerio.load(data);
@@ -46,17 +49,22 @@ async function fetchGoogleFundamentals(baseSymbol, exchange) {
       return value;
     };
 
-    // New: Get latest earnings from div with YMlKec fxKbKc class
-    const latestEarningsRaw = $('div.YMlKec.fxKbKc').first().text().trim();
-    const latestEarnings = latestEarningsRaw || '-';
+    const latestEarnings = $('div.YMlKec.fxKbKc').first().text().trim() || '-';
     const peRatio = getMetric('P/E ratio');
 
-    return { peRatio, latestEarnings };
+    return {
+      peRatio: peRatio || '-',
+      latestEarnings: latestEarnings || '-',
+    };
   } catch (err) {
     console.warn(`⚠️ Google fetch failed for ${baseSymbol}:${suffix}: ${err.message}`);
-    return { peRatio: '-', earnings: '-', latestEarnings: '-' };
+    return {
+      peRatio: '-',
+      latestEarnings: '-',
+    };
   }
 }
+
 
 //fetchGoogleFundamentals("hdfcbank","nse")
 export const updatePortfolioData = async () => {
@@ -69,40 +77,46 @@ export const updatePortfolioData = async () => {
         }
       });
 
-      // Prepare promises for all items in sector
+      // 👇 Create item update promises
       const itemPromises = items.slice(1).map(async (item) => {
-        // Calculations (investment, presentValue, gainLoss)
-        if (item.purchasePrice && item.quantity) {
-          item.investment = item.purchasePrice * item.quantity;
-        }
-        if (item.cmp && item.quantity) {
-          item.presentValue = item.cmp * item.quantity;
-        }
-        if (item.presentValue != null && item.investment != null) {
-          item.gainLoss = item.presentValue - item.investment;
-        }
-
-        // Fetch Yahoo data
         try {
-          const yahooData = await fetchCMPFromYahoo(item.particulars);
-          item.cmp = yahooData?.cmp;
-          if (yahooData?.exchange) {
-            // Fetch Google data in parallel as well
-            const googleData = await fetchGoogleFundamentals(item.nseBse, yahooData.exchange);
-            item.peRatio = googleData?.peRatio || item.peRatio;
-            item.latestEarnings = googleData?.latestEarnings || item.latestEarnings;
+          if (item.purchasePrice && item.quantity) {
+            item.investment = item.purchasePrice * item.quantity;
           }
-        } catch (err) {
-          console.error(`Failed to fetch data for ${item.particulars}:`, err);
-        }
 
-        return item;
+          const yahooData = await fetchCMPFromYahoo(item.particulars);
+          item.cmp = yahooData?.cmp ?? item.cmp;
+          item.presentValue = item.cmp * item.quantity;
+          item.gainLoss = item.presentValue - item.investment;
+
+          if (yahooData?.exchange) {
+            const googleData = await fetchGoogleFundamentals(item.nseBse, yahooData.exchange);
+            item.peRatio = googleData?.peRatio ?? '-';
+            item.latestEarnings = googleData?.latestEarnings ?? '-';
+          } else {
+            item.peRatio = '-';
+            item.latestEarnings = '-';
+          }
+
+          return item;
+        } catch (err) {
+          console.error(`❌ Error updating ${item.particulars}:`, err.message);
+          // Still return item with fallback values
+          item.peRatio = '-';
+          item.latestEarnings = '-';
+          return item;
+        }
       });
 
-      // Await all items in parallel
-      const updatedItems = await Promise.all(itemPromises);
+      // ✅ Execute all updates in parallel
+      const results = await Promise.allSettled(itemPromises);
 
-      // Sum numeric fields after all updates
+      // ✅ Filter out the successful values or fallback to empty item
+      const updatedItems = results.map(result =>
+        result.status === 'fulfilled' ? result.value : {}
+      );
+
+      // ✅ Sum all numeric fields
       updatedItems.forEach(item => {
         Object.entries(item).forEach(([key, value]) => {
           if (typeof value === 'number') {
@@ -111,9 +125,11 @@ export const updatePortfolioData = async () => {
         });
       });
 
+      // ✅ Assign totals to first item in sector
       Object.assign(items[0], totals);
     }
   }
 
+  // ✅ Save updated portfolio
   fs.writeFileSync('./portfolio_data.json', JSON.stringify(portfolioData, null, 2));
-}
+};
