@@ -12,7 +12,7 @@ async function fetchCMPFromYahoo(companyName) {
     if (!quoteMeta) return null;
 
     const quote = await yahooFinance.quote(quoteMeta.symbol);
-    console.log(quote.regularMarketPrice, quote.symbol)
+    // console.log(quote.regularMarketPrice, quote.symbol)
     return {
       cmp: quote.regularMarketPrice,
       exchange: quoteMeta.exchange,
@@ -27,7 +27,7 @@ async function fetchCMPFromYahoo(companyName) {
 async function fetchGoogleFundamentals(baseSymbol, exchange) {
   const suffix = (/^\d+$/.test(baseSymbol) || exchange === 'BSE') ? 'BOM' : 'NSE';
   const url = `https://www.google.com/finance/quote/${baseSymbol}:${suffix}`;
-
+  // console.log(url)
   try {
     const { data } = await axios.get(url, {
       headers: { 'User-Agent': 'Mozilla/5.0' },
@@ -119,12 +119,15 @@ export const updatePortfolioData = async () => {
       // ✅ Sum all numeric fields
       updatedItems.forEach(item => {
         Object.entries(item).forEach(([key, value]) => {
-          if (typeof value === 'number') {
-            totals[key] += value;
-          }
+           if (key === 'investment' || key === 'portfolioPercent' || key === 'presentValue' || key === 'gainLoss') {
+            // console.log(key, value)  
+            if(value !== ''){
+                totals[key] += value;
+            }
+          }else 
+              totals[key] = ''
         });
       });
-
       // ✅ Assign totals to first item in sector
       Object.assign(items[0], totals);
     }

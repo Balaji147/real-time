@@ -4,13 +4,16 @@
       {
         "totalInvestment": 328450,
         "portfolioPercent": 0.21285627260119502,
-        "presentValue": 311780.39999999997,
-        "gainLoss": -16669.59999999999,
-        "purchasePrice": 8890,
-        "quantity": 1733,
+        "presentValue": 311751,
+        "gainLoss": -16699,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 328450,
-        "cmp": 4474.66,
-        "nseBse": null
+        "cmp": "",
+        "nseBse": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "HDFC Bank",
@@ -45,11 +48,11 @@
         "investment": 65520,
         "portfolioPercent": 0.04246108382046064,
         "nseBse": 532174,
-        "presentValue": 119964.6,
-        "gainLoss": 54444.600000000006,
+        "presentValue": 119935.2,
+        "gainLoss": 54415.2,
         "peRatio": "20.08",
         "latestEarnings": "₹1,428.15",
-        "cmp": 1428.15
+        "cmp": 1427.8
       },
       {
         "particulars": "Bajaj Housing",
@@ -82,13 +85,16 @@
       {
         "totalInvestment": 203870,
         "portfolioPercent": 0.13212059155185152,
-        "presentValue": 186693,
-        "gainLoss": -17177.00000000001,
-        "purchasePrice": 3110,
-        "quantity": 360,
+        "presentValue": 186696.15,
+        "gainLoss": -17173.850000000002,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 203870,
-        "nseBse": 2163576,
-        "cmp": 2784.3999999999996
+        "nseBse": "",
+        "cmp": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "KPIT Tech",
@@ -110,11 +116,11 @@
         "investment": 67536,
         "portfolioPercent": 0.04376757870724405,
         "nseBse": 544028,
-        "presentValue": 44455.95,
-        "gainLoss": -23080.050000000003,
+        "presentValue": 44459.100000000006,
+        "gainLoss": -23076.899999999994,
         "peRatio": "42.35",
         "latestEarnings": "₹705.65",
-        "cmp": 705.65
+        "cmp": 705.7
       },
       {
         "particulars": "BLS E-Services",
@@ -147,13 +153,16 @@
       {
         "totalInvestment": 263565,
         "portfolioPercent": 0.17080670874755355,
-        "presentValue": 327978,
-        "gainLoss": 64412.99999999997,
-        "purchasePrice": 6998,
-        "quantity": 153,
+        "presentValue": 327965.39999999997,
+        "gainLoss": 64400.399999999965,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 263565,
-        "cmp": 8564.7,
-        "nseBse": null
+        "cmp": "",
+        "nseBse": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "Dmart",
@@ -188,11 +197,11 @@
         "investment": 85536,
         "portfolioPercent": 0.055432711624953016,
         "nseBse": 500331,
-        "presentValue": 110770.2,
-        "gainLoss": 25234.199999999997,
+        "presentValue": 110757.59999999999,
+        "gainLoss": 25221.59999999999,
         "peRatio": "75.51",
         "latestEarnings": "₹3,075.60",
-        "cmp": 3076.95
+        "cmp": 3076.6
       }
     ],
     "Power": [
@@ -201,11 +210,14 @@
         "portfolioPercent": 0.10295127862818038,
         "presentValue": 148481,
         "gainLoss": -10378.999999999996,
-        "purchasePrice": 2141,
-        "quantity": 770,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 158860,
-        "nseBse": 2118241,
-        "cmp": 1032.69
+        "nseBse": "",
+        "cmp": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "Tata Power",
@@ -264,13 +276,16 @@
       {
         "totalInvestment": 198656,
         "portfolioPercent": 0.12618900107578448,
-        "presentValue": 666144.4,
-        "gainLoss": 467488.4,
-        "purchasePrice": 4915,
-        "quantity": 144,
+        "presentValue": null,
+        "gainLoss": null,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 198656,
-        "nseBse": 1086169,
-        "cmp": null
+        "nseBse": "",
+        "cmp": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "Hariom Pipes",
@@ -279,8 +294,8 @@
         "investment": 34800,
         "portfolioPercent": 0.02,
         "nseBse": 543517,
-        "presentValue": 392940,
-        "gainLoss": 358140,
+        "presentValue": null,
+        "gainLoss": null,
         "peRatio": "-",
         "latestEarnings": "-"
       },
@@ -315,13 +330,16 @@
       {
         "totalInvestment": 255709,
         "portfolioPercent": 0.1657155262919135,
-        "presentValue": 202443.4543,
-        "gainLoss": -53265.545699999995,
-        "purchasePrice": 11376,
-        "quantity": 132,
+        "presentValue": 208066.64,
+        "gainLoss": -47642.36,
+        "purchasePrice": "",
+        "quantity": "",
         "investment": 255709,
-        "nseBse": 2665277,
-        "cmp": 10558.3307
+        "nseBse": "",
+        "cmp": "",
+        "particulars": "",
+        "peRatio": "",
+        "latestEarnings": ""
       },
       {
         "particulars": "Clean Science",
@@ -356,11 +374,11 @@
         "investment": 68544,
         "portfolioPercent": 0.04442082615063575,
         "nseBse": 541557,
-        "presentValue": 82448.8,
-        "gainLoss": 13904.800000000003,
+        "presentValue": 82536,
+        "gainLoss": 13992,
         "peRatio": "38.26",
         "latestEarnings": "₹5,122.85",
-        "cmp": 5153.05
+        "cmp": 5158.5
       },
       {
         "particulars": "Gravita",
@@ -382,11 +400,11 @@
         "investment": 58653,
         "portfolioPercent": 0.038010835612354674,
         "nseBse": 540719,
-        "presentValue": 4703.0543,
-        "gainLoss": -53949.9457,
+        "presentValue": 10239.04,
+        "gainLoss": -48413.96,
         "peRatio": "77.12",
         "latestEarnings": "₹1,856.20",
-        "cmp": 95.9807
+        "cmp": 208.96
       }
     ]
   }

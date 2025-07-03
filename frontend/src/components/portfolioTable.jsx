@@ -28,7 +28,7 @@ export default function PortfolioTable({ data }) {
 
     // Push total row
     formattedRows.push({ isSummary: true, ...items[0] });
-
+    // console.log(formattedRows)
     // Push individual company rows
     items.slice(1).forEach(company => {
       formattedRows.push(company);
@@ -66,7 +66,6 @@ export default function PortfolioTable({ data }) {
         <tbody>
           {table.getRowModel().rows.map((row, index) => {
             const original = row.original;
-
             if (original.isSectorHeader) {
               return (
                 <tr key={`sector-${index}`}>
